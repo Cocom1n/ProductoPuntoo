@@ -2,7 +2,7 @@ PVector posPersonaje;
 PVector posTesoro;
 PVector vecor;
 PVector destino;
-float suma;
+
 
 
 public void setup(){
