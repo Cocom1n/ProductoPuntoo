@@ -1,9 +1,7 @@
 PVector posPersonaje;
 PVector posTesoro;
-PVector vecor;
+PVector vector;
 PVector destino;
-
-
 
 public void setup(){
   size(400,400);
@@ -17,16 +15,17 @@ public void draw(){
  dibujarpersonaje();
  posTesoro= new PVector(width/2,height/2);
  dibujarTesoro();
- vecor = new PVector(posPersonaje.x, posPersonaje.y);
+ dibujarVector();
+ //vecor = new PVector(posPersonaje.x, posPersonaje.y);
  
 }
 
 
 public void dibujarVector(){
   strokeWeight(3);
-  suma=posTesoro-posPersonaje;
-  destino = new PVector(suma).normalize().mult(30);
-  line(posPersonaje.x, posPersonaje.y, destino.x,destino.y);
+  vector = PVector.sub(posPersonaje,posTesoro).normalize();
+  line(posPersonaje.x,posPersonaje.y,posTesoro.x+vector.x, posTesoro.y+vector.y);
+  //line(posPersonaje.x, posPersonaje.y, vector.x,vector.y);
   //vecPersonajeTesoro.setDestino(PVector.sub(posTesoro,vectorPersonaje,getOrigen()).normalize().mult(30));
 
 }
